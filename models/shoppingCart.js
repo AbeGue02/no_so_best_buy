@@ -4,7 +4,8 @@ const  { Schema } = require('mongoose')
 const ShoppingCart = new Schema(
     {
         total_price: { type: Number, required: true },
-        user_id: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+        user: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+        products: [{ type: Schema.Types.ObjectId, ref: 'Product', required: true }],
 
     },
     { timestamps: true },
