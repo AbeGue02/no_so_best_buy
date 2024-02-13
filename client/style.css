@@ -25,8 +25,8 @@ header {
 h1 {
     margin: 0;
     position: relative;
-    height: 98%px;
-    border: red solid 2px;
+    height: 98%;
+
     width: 100px;
     font-size: 1rem;
     text-align: center;
@@ -35,11 +35,34 @@ h1 {
 }
 
 #search-bar-container {
-    height: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    margin-right: 0px;
+    padding-top: 0px;
+}
+
+#cart-container {
+    height: 100%;
+    width: 35%;
+    border: red solid 2px;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 input {
     height: 25px;
-    width: 30%;
-    border: red solid 2px;
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    
+    
+}
+
+img {
+    height: 60px;
+    width: auto;
 }
