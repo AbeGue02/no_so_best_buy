@@ -1,15 +1,26 @@
-const Category = require('../models/category');
+const db = require('../db')
+const { Category } = require('../models/');
 
 const main = async () => {
-    const categoryData = { name: 'Stereo Equipment', description: 'An electronic system that plays an audio source over loudspeakers' };
-
     try {
+        const categoryData = [
+            { 
+                name: 'Stereo Equipment', 
+                description: 'An electronic system that plays an audio source over loudspeakers' 
+            }
+        ]
+
         // Save the category to the database
-        const category = await Category.create(categoryData);
+        const categories = await Category.insertMany(categoryData);
         console.log('Category added successfully:', category);
     } catch (err) {
         console.error('Error inserting category:', err);
     }
 };
 
-main();
+const run = async () => {
+    await main()
+    db.close()
+}
+
+run()
