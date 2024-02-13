@@ -1,5 +1,4 @@
-const mongoose = require('mongoose')
-const  { Schema } = require('mongoose')
+const { Schema } = require('mongoose')
 
 const Category = new Schema(
     {
@@ -8,4 +7,4 @@ const Category = new Schema(
     { timestamps: true },
 )
 
-module.exports =  Category
+module.exports = Category

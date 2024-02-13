@@ -1,13 +1,11 @@
-const mongoose = require('mongoose')
-const  { Schema } = require('mongoose')
-
+const { Schema } = require('mongoose')
 
 const Product = new Schema(
     {
         name: { type: String, required: true },
         description: { type: String, required: true },
-        brand: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Brand' }],
-        category: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Category' }],
+        brand: { type: [{ type: Schema.Types.ObjectId, ref: 'Brand' }], required: true },
+        category: { type: [{ type: Schema.Types.ObjectId, ref: 'Category' }], required: true },
         price: { type: Number, required: true },
         quantity: { type: Number, required: true },
         image: { type: String, required: true },
@@ -16,4 +14,4 @@ const Product = new Schema(
     { timestamps: true },
 )
 
-module.exports =  Product
+module.exports = Product
