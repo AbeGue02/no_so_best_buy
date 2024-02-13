@@ -8,9 +8,11 @@
 </head>
 <body>
     <header>
-        <div class="logo">NOT SO BEST BUY</div>
+        <h1>NOT SO BEST BUY</h1>
+        <div id="search-bar-container"><input type="text" placeholder="Search"></div>  
+        <div id="cart-container">h2<img src="./cart.png" alt="shopping cart" ></div>
     </header>
-
+    
     <main>
         <aside id="sidebar">
             <h2>Search Filters</h2>
@@ -40,15 +42,17 @@
 
             <button onclick="applyFilters()">Apply Filters</button>
         </aside>
-
-        <section id="products">
+        <section id="search-results">
+            <div id="search-results-container"></div>
+            <div id="name-model-rating-container"></div>
+            <div id="price-cart-container"></div>
         </section>
     </main>
-
+  
     <footer>
         <p>&copy; 2024 NOT SO BEST BUY. All rights reserved.</p>
     </footer>
-
+  
     <script src="script.js"></script>
 </body>
 </html>
