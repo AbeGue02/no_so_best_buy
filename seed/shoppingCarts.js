@@ -1,8 +1,7 @@
 const db = require('../db')
-
 const { User,ShoppingCart} = require('./models');
 
-const createShoppingCartsForUsers = async () => {
+const main = async () => {
     try {
         // Find all users
         const users = await User.find({});
@@ -13,11 +12,15 @@ const createShoppingCartsForUsers = async () => {
             await shoppingCart.save();
             console.log(`Shopping cart created for user: ${user._id}`);
         }
-
         console.log('Shopping carts created successfully for all users');
     } catch (err) {
         console.error('Error creating shopping carts:', err);
     }
 };
 
-createShoppingCartsForUsers();
+const run = async () => {
+    await main()
+    db.close()
+}
+
+run()
