@@ -1,6 +1,6 @@
 
 body {
-    color: aliceblue;
+    color: #1B45B7;
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -26,7 +26,6 @@ h1 {
     margin: 0;
     position: relative;
     height: 98%;
-
     width: 100px;
     font-size: 1rem;
     text-align: center;
@@ -50,7 +49,18 @@ h1 {
     border: red solid 2px;
     align-items: center;
     justify-content: center;
+    display: flex;
     
+}
+
+#cart-container:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
 }
 
 input {
@@ -65,4 +75,85 @@ input {
 img {
     height: 60px;
     width: auto;
+}
+
+#search-results-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 115px;
+    width: 65%;
+    right: 0;
+    padding: 0;
+    position: absolute;
+
+}
+
+#name-model-rating-container {
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+    text-align: left;
+    height: 100%;
+    width: 60%;
+    padding-right: 0;
+    top: 0;
+}
+
+#price {
+    margin: 5px 0 0 0;
+}
+
+#name, #model, #rating {
+    font-size: 0.5rem;
+    justify-self: space-evenly;
+}
+
+#cart-button {
+    margin-top: 10px;
+    height: 1.5rem;
+    background-color: #ffe000;
+    font-weight: bolder;
+    transition: background-color 0.3s;
+}
+
+#cart-button:hover {
+    background-color: #fff563;
+}
+
+#product-img {
+    background-color: grey;
+    height: 100%;
+    width: 50%;
+}
+
+@media (min-width: 639px) {
+    #search-results-container {
+        width: 70%;
+        height: 200px;
+        margin: 10px 50px 0 0;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    #name-model-rating-container {
+        width: 95%;
+    }
+
+    #price {
+        font-size: 1.5rem;
+    }
+
+    #name, #model, #rating {
+        font-size: 1rem;
+        margin: 18px 0 20px 0;
+    }
+
+    #product-img {
+        background-color: grey;
+        height: 100%;
+        width: 35%;
+        margin-right: 5px;
+    }
 }
