@@ -1,7 +1,5 @@
 const db = require('../db')
-const { Product } = require('../models');
-const { Brand } = require('../models');
-const { Category } = require('../models');
+const { Product, Brand, Category } = require('./models');
 
 const main = async () => {
     const category = await Category.findOne({ name: 'Stereo Equipment' });
