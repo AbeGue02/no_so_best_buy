@@ -7,6 +7,14 @@ const main = async () => {
             { 
                 name: 'Stereo Equipment', 
                 description: 'An electronic system that plays an audio source over loudspeakers' 
+            },
+            {
+                name: 'Headphones',
+                description: 'A pair of small speakers used for listening to sound from a computer, music player or other such electronic device.'
+            },
+            {
+                name: 'Car Speakers',
+                description: `Speakers that convert the electrical signals from the car's audio system into sound waves that can be heard by the passengers in the car.`
             }
         ]
 
