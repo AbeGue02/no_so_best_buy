@@ -9,7 +9,7 @@ const Product = new Schema(
         price: { type: Number, required: true },
         quantity: { type: Number, required: true , default: 0 },
         image: { type: String, required: true },
-        rate: { type: Number, required: true },
+        rate: { type: Number, required: true , min: 0, max: 5, default: 0},
     },
     { timestamps: true },
 )
