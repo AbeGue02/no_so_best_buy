@@ -13,7 +13,7 @@ const main = async () => {
                 description: 'Audio equipment brand known for premium sound',
             },
             {
-                name: 'Apple',
+                name: 'JBL',
                 description: 'Technology brand offering a wide range of products',
             },
         ];

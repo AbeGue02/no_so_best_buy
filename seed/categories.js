@@ -11,8 +11,8 @@ const main = async () => {
         ]
 
         // Save the category to the database
-        const categories = await Category.insertMany(categoryData);
-        console.log('Category added successfully:', category);
+        await Category.insertMany(categoryData);
+        console.log('Category added successfully:', categoryData);
     } catch (err) {
         console.error('Error inserting category:', err);
     }

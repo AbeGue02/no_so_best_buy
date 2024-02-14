@@ -5,7 +5,7 @@ const main = async () => {
     try {
         const users = [
             {
-                username: 'john_doe',
+                user_name: 'john_doe',
                 email: 'john@example.com',
                 password: 'password123',
                 address: '123 Main St, City',

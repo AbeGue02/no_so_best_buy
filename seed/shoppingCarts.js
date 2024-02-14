@@ -1,5 +1,5 @@
 const db = require('../db')
-const { User,ShoppingCart} = require('./models');
+const { User,ShoppingCart} = require('../models');
 
 const main = async () => {
     try {
