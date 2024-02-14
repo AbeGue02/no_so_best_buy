@@ -1,6 +1,4 @@
-const Product = require('../models/product');
-const Brand = require('../models/brand');
-const Category = require('../models/category');
+const { Product, Brand, Category } = require('./models');
 
 const main = async () => {
     const brand = await Brand.findOne({ name: 'Sony' });

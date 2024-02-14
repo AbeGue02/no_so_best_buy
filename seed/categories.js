@@ -1,4 +1,4 @@
-const Category = require('../models/category');
+const Category = require('./models');
 
 const main = async () => {
     const categoryData = { name: 'Stereo Equipment', description: 'An electronic system that plays an audio source over loudspeakers' };

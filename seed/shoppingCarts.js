@@ -1,27 +1,22 @@
-const ShoppingCart = require('../models/shoppingCart');
 
+const { User,ShoppingCart} = require('./models');
 
-const userId = 'user_id_here';
+const createShoppingCartsForUsers = async () => {
+    try {
+        // Find all users
+        const users = await User.find({});
 
-
-ShoppingCart.findOne({ user: userId })
-    .populate('items')
-    .exec()
-    .then(cart => {
-        if (!cart) {
-            console.log('Shopping cart is empty');
-            return;
+        // Iterate through each user and create a shopping cart
+        for (const user of users) {
+            const shoppingCart = new ShoppingCart({ user: user._id, items: [] });
+            await shoppingCart.save();
+            console.log(`Shopping cart created for user: ${user._id}`);
         }
-        console.log('User:', cart.user);
-        console.log('Items in cart:');
-        cart.items.forEach(item => {
-            console.log('- Product:', item.product.name);
-            console.log('  Quantity:', item.quantity);
-            console.log('  Price:', item.product.price);
-            console.log('  Total:', item.product.price * item.quantity);
-            console.log('-----------------------');
-        });
-    })
-    .catch(err => {
-        console.error('Error fetching shopping cart:', err);
-    });
+
+        console.log('Shopping carts created successfully for all users');
+    } catch (err) {
+        console.error('Error creating shopping carts:', err);
+    }
+};
+
+createShoppingCartsForUsers();
