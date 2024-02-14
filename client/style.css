@@ -11,7 +11,7 @@ header {
     align-content: flex-start;
     width: 100vw;
     height: 80px;
-    position: sticky;
+    position: fixed;
     top: 0;
     margin: 0;
     padding: 0;
@@ -21,6 +21,7 @@ header {
 
 main {
     display: flex;
+    flex-direction: row;
 }
 
 footer {
@@ -34,39 +35,10 @@ footer {
 }
 
 h1 {
-    margin: 0;
-    position: relative;
-    height: 98%;
-    width: 100px;
-    font-size: 1rem;
+    color: white;
+    margin: 10px;
+    font-size: 1.5rem;
     text-align: center;
-    margin-top: 15px;
-
-}
-
-#search-bar-container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40%;
-    margin-right: 0px;
-    padding-top: 0px;
-}
-
-#cart-container {
-    height: 100%;
-    width: 35%;
-    border: red solid 2px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    
-}
-
-#cart-container:hover {
-    text-decoration: underline;
-    text-decoration-color: white;
 }
 
 h2 {
@@ -100,17 +72,55 @@ img {
     width: auto;
 }
 
-#search-results-container {
+.priceFilters {
+    display: inline;
+}
+
+#sidebar {
+    flex: 1;
+    margin: 10px;
+}
+
+#priceFilterContainer {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    height: 115px;
-    width: 65%;
-    right: 0;
-    padding: 0;
-    position: absolute;
+    margin: 10px
+}
 
+#priceFilterContainer input {
+    text-align: center;
+    margin: 0px 10px;
+}
+
+#search-bar-container {
+    display: flex;
+    flex: 1.5;
+    margin: 10px 20px;
+    align-items: center;
+    justify-content: center;
+    border: 0 solid transparent;
+}
+
+#cart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cart-container:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+#search-results-container {
+    display: flex;
+    flex: 3;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 #name-model-rating-container {
@@ -134,9 +144,9 @@ img {
 }
 
 #cart-button {
-    margin-top: 10px;
     height: 1.5rem;
     background-color: #ffe000;
+    border-radius: 10px;
     font-weight: bolder;
     transition: background-color 0.3s;
 }
@@ -155,8 +165,7 @@ img {
     #search-results-container {
         width: 70%;
         height: 200px;
-        margin: 10px 50px 0 0;
-        padding: 5px;
+        margin: 10px;
         border-radius: 10px;
     }
 
