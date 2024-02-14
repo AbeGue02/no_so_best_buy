@@ -72,6 +72,8 @@ img {
     width: auto;
 }
 
+/* AMID'S CODE START */
+
 .priceFilters {
     display: inline;
 }
@@ -102,6 +104,8 @@ img {
     justify-content: center;
     border: 0 solid transparent;
 }
+
+/* AMID'S CODE END */
 
 #cart-container {
     display: flex;
