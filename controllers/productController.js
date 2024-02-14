@@ -1,5 +1,5 @@
 
-const { Product } = require('./models'); 
+const { Product } = require('../models'); 
 
 const productFilter = async (req, res) => {
     try {
