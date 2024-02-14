@@ -1,4 +1,4 @@
-const Brand = require('../models/brand');
+const Brand = require('./models');
 
 const main = async () => {
     const brands = [
@@ -11,7 +11,7 @@ const main = async () => {
             description: 'Audio equipment brand known for premium sound',
         },
         {
-            name: 'Apple',
+            name: 'JBL',
             description: 'Technology brand offering a wide range of products',
         },
     ];
