@@ -8,13 +8,15 @@
 </head>
 <body>
     <header>
-        <h1>NOT SO BEST BUY</h1>
-        <div id="search-bar-container"><input type="text" placeholder="Search"></div>  
-        <div id="cart-container"><h2>cart</h2><img src="./cart.png" alt="shopping cart" ></div>
+        <div class="logo">NOT SO BEST BUY</div>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search products...">
+            <button onclick="performSearch()">Search</button>
     </header>
-    <main>
-        <aside id="sidebar">
-            <h2>Search Filters</h2>
+
+ <main>
+    <aside id="sidebar">
+        <h2>Search Filters</h2>
 
             
             <label for="rating">Minimum Rating:</label>
@@ -37,29 +39,22 @@
                 <option value="pioneer">Pioneer</option>
                 <option value="kenwood">Kenwood</option>
                 <option value="jvc">JVC</option>
+                <option value="yamaha">Yamaha</option>
+                <option value="LG">LG</option>
             </select>
 
             <button onclick="applyFilters()">Apply Filters</button>
         </aside>
-        <div id="search-results-container">
-            <div id="product-img"></div>
-            <div id="name-model-rating-container">
-                <p id="price">$1200</p>
-                <p id="name">Name</p>
-                <p id="model">Model</p>
-                <p id="rating">Rating</p>
-                <input type="button" value="🛒 Add to Cart" id="cart-button">
-            </div>
-        </div>
+
+        <section id="products">
+        </section>
     </main>
-  
+
     <footer>
         <p>&copy; 2024 NOT SO BEST BUY. All rights reserved.</p>
     </footer>
-  
+
     <script src="script.js"></script>
 </body>
 </html>
-
-    
    
