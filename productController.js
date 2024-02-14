@@ -19,7 +19,7 @@ const productFilter = async (req, res) => {
             query.price = { $lte: req.query.priceMax };
         }
 
-        // Filter by rating
+        // Filter by rating.
         if (req.query.ratingMin) {
             query.rating = { $gte: req.query.ratingMin, $lte: 5 };
         }
