@@ -1,7 +1,7 @@
-
+const db = require ('..db')
 const { User,ShoppingCart} = require('./models');
 
-const createShoppingCartsForUsers = async () => {
+const main = async () => {
     try {
         // Find all users
         const users = await User.find({});
@@ -19,4 +19,8 @@ const createShoppingCartsForUsers = async () => {
     }
 };
 
-createShoppingCartsForUsers();
+
+const run = async() =>{
+    await main()
+    db.close()
+}

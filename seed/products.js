@@ -1,3 +1,4 @@
+const db = require ('..db')
 const { Product, Brand, Category } = require('./models');
 
 const main = async () => {

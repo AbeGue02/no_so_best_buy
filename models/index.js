@@ -1,8 +1,9 @@
 const mongoose = require('mongoose')
+
 const BrandSchema = require('./brand')
 const CartItemSchema = require('./cartItem')
 const CategorySchema = require('./category')
-const ProductSchema = require('./ingredient')
+const ProductSchema = require('./product')
 const ShoppingCartSchema = require('./shoppingCart')
 const UserSchema = require('./user')
 
