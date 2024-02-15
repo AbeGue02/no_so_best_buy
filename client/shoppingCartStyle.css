@@ -52,6 +52,10 @@ input {
     border-radius: 3px;
 }
 
+input[type=Number] {
+    border-bottom: 1px solid darkgray;
+}
+
 img {
     height: 100px;
     width: auto;
@@ -104,7 +108,7 @@ img {
 
 #logo {
     color: white;
-    margin: 10px;
+    margin: auto 10px;
     font-size: 1.5rem;
     text-align: center;
 }
