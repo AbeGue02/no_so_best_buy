@@ -33,7 +33,7 @@ const productFilter = async (req, res) => {
         if (req.query.brand) {
             query.brand = req.query.brand;
         }
-        const products = await Product.find(query);
+        const products = await Product.find(query).populate;
         res.json(products);
     } catch (err) {
         res.status(500).json({ message: err.message });
