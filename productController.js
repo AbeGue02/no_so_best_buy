@@ -3,6 +3,7 @@ const { Product } = require('./models');
 
 const productFilter = async (req, res) => {
     try {
+        
         let query = {};
 
         // Filter by name
@@ -28,7 +29,7 @@ const productFilter = async (req, res) => {
         if (req.query.category) {
             query.category = req.query.category;
         }
-        
+     
         // Filter by brand
         if (req.query.brand) {
             query.brand = req.query.brand;
@@ -40,7 +41,7 @@ const productFilter = async (req, res) => {
     }
 };
        
-
+//export product filter
 module.exports = {
     productFilter
 
