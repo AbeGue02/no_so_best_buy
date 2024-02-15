@@ -21,16 +21,25 @@ const productFilter = async (req, res) => {
 
         // Filter by rating
         if (req.query.ratingMin) {
-            query.rating = { $gte: req.query.ratingMin, $lte: 5 };
+            query.rate = { $gte: parseInt(req.query.ratingMin), $lte: 5 };
         }
 
+        // Filter by category
+        if (req.query.category) {
+            query.category = req.query.category;
+        }
+        
+        // Filter by brand
+        if (req.query.brand) {
+            query.brand = req.query.brand;
+        }
         const products = await Product.find(query);
         res.json(products);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
 };
-
+       
 
 module.exports = {
     productFilter
