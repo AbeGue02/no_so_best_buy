@@ -1,6 +1,12 @@
 
+// GLOBAL VARIABLES
+
 const testProduct = document.querySelector('#getme')
 const productsContainer = document.querySelector('#shopping-cart-contents')
+let user = ''
+let shoppingCart = ''
+
+// CLASSES
 
 class DOMCartItem {
     constructor(id, productId, quantity) {
@@ -56,7 +62,12 @@ class DOMCartItem {
             console.error(e)
         }
     }
+    async deleteItem() {
+        
+    }
 }
+
+// FUNCTIONS
 
 const createCartItem = async () => {
     const testProduct = new DOMCartItem(1, '65cce449e7d04ed6831f4492', 50)
@@ -64,6 +75,30 @@ const createCartItem = async () => {
     productsContainer.insertAdjacentHTML('beforeend', testProduct.htmlText)
 }
 
+const getUser = async () => {
+    try {
+        const userId = '65ce2726cdfc279c20cc82d1' //Hardcoded for now
+        user = await axios.get(`http://localhost:3001/users/${userId}`)
+        console.log(user)
+    } catch (e) {
+        console.error('Error occurred withing getUser function',e)
+    }
+}
+
+const getShoppingCart = async () => {
+    try {
+        const { _id } = user.data
+        shoppingCart = await axios.get(`http://localhost:3001/users/${_id}/shoppingCart`)
+        console.log(shoppingCart)
+    } catch (e) {
+        console.error('Error has occurred i=within getShoppingCart func: ', e)
+    }
+}
+
+// EVENT LISTENERS
+
 testProduct.addEventListener('click', async () => {
-    await createCartItem()
+    //await createCartItem()
+    await getUser()
+    await getShoppingCart()
 })
