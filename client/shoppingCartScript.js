@@ -61,7 +61,6 @@ class DOMCartItem {
 const createCartItem = async () => {
     const testProduct = new DOMCartItem(1, '65cce449e7d04ed6831f4492', 50)
     await testProduct.populate()
-    console.log(testProduct.htmlText)
     productsContainer.insertAdjacentHTML('beforeend', testProduct.htmlText)
 }
 
