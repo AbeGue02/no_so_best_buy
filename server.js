@@ -6,7 +6,7 @@ const cors = require('cors');
 const { getProducts, getProductById, createProduct, updateProduct, deleteProduct } = require('./controllers/productsController');
 const { getBrands, getBrandById, createBrand, updateBrand, deleteBrand } = require('./controllers/brandController');
 const { getCartItems, getCartItemById, createCartItem, updateCartItem, deleteCartItem } = require('./controllers/cartItemController');
-const { getShoppingCarts, getShoppingCartById, createShoppingCart, updateShoppingCart, deleteShoppingCart } = require('./controllers/shoppingCartController');
+const { getShoppingCarts,getShoppingCartUser,getShoppingCartById, createShoppingCart, updateShoppingCart, deleteShoppingCart } = require('./controllers/shoppingCartController');
 const { getUsers, getUserById, createUser, updateUser, deleteUser } = require('./controllers/userController');
 const { getCategories, getCategoryById, createCategory, updateCategory, deleteCategory } = require('./controllers/categoryController');
 
@@ -57,6 +57,7 @@ app.put('/cartItems/:id/update', updateCartItem)
 app.delete('/cartItems/:id/delete', deleteCartItem)
 
 app.get('/users', getUsers)
+app.get('/users/:id/shopping-cart', getShoppingCartUser);
 app.post('/users/create', createUser)
 app.get('/users/:id', getUserById)
 app.put('/users/:id/update', updateUser)
