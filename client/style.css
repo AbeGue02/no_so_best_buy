@@ -1,5 +1,5 @@
 body {
-    color: #1B45B7;
+    color: #050506;
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -15,8 +15,7 @@ header {
     top: 0;
     margin: 0;
     padding: 0;
-    background-color: #1B45B7;
-    overflow: hidden;
+    background-color: #0070c0
 }
 
 main {
@@ -25,7 +24,7 @@ main {
 
 footer {
     background-color: #0070c0;
-    color: white;
+    color: rgb(246, 241, 241);
     text-align: center;
     padding: 10px 0;
     position: fixed;
@@ -44,6 +43,14 @@ h1 {
 
 }
 
+#sidebar {
+    background-color: rgb(212, 209, 209);
+    height: 1000px;
+    width: 250px;
+    color: #0b0b0b;
+    border-width: 1000px;
+}
+
 #search-bar-container {
     height: 100%;
     display: flex;
@@ -57,7 +64,7 @@ h1 {
 #cart-container {
     height: 100%;
     width: 35%;
-    border: red solid 2px;
+    border: rgb(247, 245, 245) solid 2px;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -91,7 +98,7 @@ header {
     top: 0;
     margin: 0;
     padding: 0;
-    background-color: #1B45B7;
+    background-color: #0070c0;
     overflow: hidden; 
 }
 
