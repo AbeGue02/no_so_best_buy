@@ -5,11 +5,7 @@ cart.addEventListener('click', () => {
 })
 
 //Product data
-const products = [
-    { name: 'Pioneer 7', rating: 4.5, price: 799.99, brand: 'Pioneer' },
-    { name: 'Kenwood 6.8', rating: 4.0, price: 499.99, brand: 'Kenwood' },
-    { name: 'JVC 6.8', rating: 4.2, price: 899.99, brand: 'JVC' },
-];
+const products = []
 
 // Function to render product cards
 function renderProducts(productsToRender) {
@@ -24,7 +20,7 @@ function renderProducts(productsToRender) {
             <h3>${product.name}</h3>
             <p>Rating: ${product.rating}</p>
             <p>Price: $${product.price}</p>
-            <p>Brand: ${product.brand}</p>
+            <p>Categories: ${product.categories}</p>
         `;
 
         productsSection.appendChild(productCard);
@@ -36,7 +32,7 @@ function applyFilters() {
     const minRating = parseFloat(document.getElementById('rating').value);
     const minPrice = parseFloat(document.getElementById('priceMin').value);
     const maxPrice = parseFloat(document.getElementById('price').value);
-    const selectedBrand = document.getElementById('brand').value;
+    const selectedCategories = document.getElementById('categories').value;
 
     const filteredProducts = products.filter(product => {
         const ratingFilter = minRating === 0 || product.rating >= minRating;
@@ -44,7 +40,7 @@ function applyFilters() {
         const maxPriceFilter = isNaN(maxPrice) || product.price <= maxPrice;
         const brandFilter = selectedBrand === 'all' || product.brand.toLowerCase() === selectedBrand.toLowerCase();
 
-        return ratingFilter && priceFilter && brandFilter;
+        return ratingFilter && priceFilter && categoriesFilter;
     });
 
     renderProducts(filteredProducts);
@@ -65,7 +61,7 @@ document.getElementById('priceMin').addEventListener('input', function () {
     applyFilters();
 });
 document.getElementById('priceMax').addEventListener('input', applyFilters);
-document.getElementById('brand').addEventListener('change', applyFilters);
+document.getElementById('categories').addEventListener('change', applyFilters);
 
 // Initial rendering
 renderProducts(products);

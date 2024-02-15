@@ -19,14 +19,14 @@
         <aside id="sidebar">
             <h2>Search Filters</h2>
 
-            <label for="ratingSelect">Minimum Rating:</label>
+            <label for="ratingSelect">Minimum Rating: ⭐ </label>
             <select id="ratingSelect">
                 <option value="0">Any</option>
-                <option value="1">1.0</option>
-                <option value="2">2.0</option>
-                <option value="3">3.0</option>
-                <option value="4">4.0</option>
-                <option value="5">5.0</option>
+                <option value="1">1.0 ★ </option>
+                <option value="2">2.0 ★</option>
+                <option value="3">3.0 ★</option>
+                <option value="4">4.0 ★</option>
+                <option value="5">5.0 ★</option>
             </select>
 
             <br />
@@ -37,12 +37,10 @@
                 <span> - </span>
                 <input type="number" class="priceFilters" id="priceMax" min="0" placeholder="max.">
             </div>
-            <label for="brand">Brand:</label>
-            <select id="brand">
-                <option value="all">All Brands</option>
-                <option value="pioneer">Pioneer</option>
-                <option value="kenwood">Kenwood</option>
-                <option value="jvc">JVC</option>
+            <label for="categories">Categories:</label>
+            <select id="categories">
+                <option value="0">Select Categorie...</option>
+                <option value="all">All Categories</option>
             </select>
 
             <button id="apply-filters" onclick="applyFilters()">Apply Filters</button>
