@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Not So Best Buy</title>
+</head>
+<body>
+    <header>
+        <h1>NOT SO BEST BUY</h1>
+        <div id="search-bar-container"><input type="text" placeholder="Search"></div>  
+        <div id="cart-container"><img src="./cart.png" alt="shopping cart" ></div>
+    </header>
+    <main>
+
+        <!-- AMID CODE START -->
+
+        <aside id="sidebar">
+            <h2>Search Filters</h2>
+
+            <label for="ratingSelect">Minimum Rating:</label>
+            <select id="ratingSelect">
+                <option value="0">Any</option>
+                <option value="1">1.0</option>
+                <option value="2">2.0</option>
+                <option value="3">3.0</option>
+                <option value="4">4.0</option>
+                <option value="5">5.0</option>
+            </select>
+
+            <br />
+            
+            <label for="priceMin priceMax">Price Filter:</label>
+            <div id="priceFilterContainer">
+                <input type="number" class="priceFilters" id="priceMin" min="0" placeholder="min.">
+                <span> - </span>
+                <input type="number" class="priceFilters" id="priceMax" min="0" placeholder="max.">
+            </div>
+            <label for="brand">Brand:</label>
+            <select id="brand">
+                <option value="all">All Brands</option>
+                <option value="pioneer">Pioneer</option>
+                <option value="kenwood">Kenwood</option>
+                <option value="jvc">JVC</option>
+            </select>
+
+            <button id="apply-filters" onclick="applyFilters()">Apply Filters</button>
+        </aside>
+
+        <!-- AMID CODE END -->
+
+        <section id="search-results-container">
+            <div id="product-img"></div>
+            <div id="name-model-rating-container">
+                <p id="price">$1200</p>
+                <p id="name">Name</p>
+                <p id="model">Model</p>
+                <p id="rating">Rating</p>
+                <input type="button" value="🛒 Add to Cart" id="cart-button">
+            </div>
+        </section>
+    </main>
+  
+    <footer>
+        <p>&copy; 2024 NOT SO BEST BUY. All rights reserved.</p>
+    </footer>
+  
+    <script src="script.js"></script>
+</body>
+</html>
+
+    
+   

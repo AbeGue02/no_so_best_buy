@@ -1,21 +1,6 @@
-const db = require ('..db')
-const CartItem = require('./models');
 
+const db = require('../db')
+const {CartItem} = require('../models');
 
-const userId = 'user_id_here';
+// Most likely to be done inside of the front end
 
-CartItem.find({ user: userId })
-    .populate('product')
-    .exec()
-    .then(cartItems => {
-        cartItems.forEach(cartItem => {
-            console.log('Product:', cartItem.product.name);
-            console.log('Quantity:', cartItem.quantity);
-            console.log('Price:', cartItem.product.price);
-            console.log('Total:', cartItem.product.price * cartItem.quantity);
-            console.log('-----------------------');
-        });
-    })
-    .catch(err => {
-        console.error('Error fetching cart items:', err);
-    });

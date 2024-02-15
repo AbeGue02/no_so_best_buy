@@ -1,0 +1,246 @@
+body {
+    color: #050506;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    width: 100vw;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #0070c0;
+    overflow: hidden;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+footer {
+    background-color: #0070c0;
+    color: rgb(246, 241, 241);
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+h1 {
+    color: white;
+    margin: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+input {
+    height: 25px;
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    width: 100vw;
+    height: 80px;
+    position: sticky;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #0070c0;
+    overflow: hidden; 
+}
+
+img {
+    height: 60px;
+    width: auto;
+}
+
+/* AMID'S CODE START */
+
+.priceFilters {
+    display: inline;
+}
+
+#sidebar {
+    flex: 1;
+    margin: 10px;
+}
+
+#priceFilterContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px
+}
+
+#priceFilterContainer input {
+    text-align: center;
+    margin: 0px 10px;
+}
+
+#search-bar-container {
+    display: flex;
+    flex: 1.5;
+    margin: 10px 20px;
+    align-items: center;
+    justify-content: center;
+    border: 0 solid transparent;
+}
+
+/* AMID'S CODE END */
+
+#cart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cart-container:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+#search-results-container {
+    display: flex;
+    flex: 3;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#name-model-rating-container {
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+    text-align: left;
+    height: 100%;
+    width: 60%;
+    padding-right: 0;
+    top: 0;
+}
+
+#price {
+    margin: 0 0 0 0;
+    border: red solid 2px;
+}
+
+#name, #model, #rating {
+    font-size: 0.5rem;
+    justify-self: space-evenly;
+}
+
+#rating-filter {
+    margin: 5px 0 5px 0;
+    border-bottom: #ccc solid 2px ;
+    padding-bottom: 5px;
+}
+
+label {
+    margin: 10px 0 0 0;
+}
+
+#max-price {
+    margin: 0 0 5px 0;
+    border-bottom: #ccc solid 1px ;
+    padding-bottom: 5px;
+}
+
+#brand {
+    margin: 5px 0 10px 0
+}
+
+#cart-button {
+    height: 1.5rem;
+    background-color: #ffe000;
+    border-radius: 10px;
+    font-weight: bolder;
+    transition: background-color 0.3s;
+}
+
+#cart-button:hover {
+    background-color: #fff563;
+}
+
+#product-img {
+    background-color: grey;
+    height: 100%;
+    width: 50%;
+}
+
+
+#sidebar {
+    width: 20%;
+    padding: 20px;
+    background-color: white;
+    border-right: 2px solid #ccc;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+#apply-filters {
+    
+}
+
+
+
+@media (min-width: 639px) {
+
+    h1 {
+        font-size: 1.5rem;
+        margin: 10px 0 0 20px;
+    }
+
+    header {
+        height: 100px;
+
+    }
+
+    #search-results-container {
+        width: 70%;
+        height: 200px;
+        margin: 10px;
+        border-radius: 10px;
+    }
+
+    #name-model-rating-container {
+        width: 95%;
+    }
+
+    #price {
+        font-size: 1.5rem;
+    }
+
+    #name, #model, #rating {
+        font-size: 1rem;
+        margin: 18px 0 20px 0;
+    }
+
+    #product-img {
+        background-color: grey;
+        height: 100%;
+        width: 35%;
+        margin-right: 5px;
+    }
+}
+

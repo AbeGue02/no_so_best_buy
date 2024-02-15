@@ -1,21 +1,28 @@
-const User = require('./models');
+const db = require('../db')
+const {User} = require('../models');
 
 const main = async () => {
-    const user = new User({
-        username: 'john_doe',
-        email: 'john@example.com',
-        password: 'password123',
-        address: '123 Main St, City',
-        phone: '123-456-7890',
-    });
-
     try {
+        const users = [
+            {
+                user_name: 'john_doe',
+                email: 'john@example.com',
+                password: 'password123',
+                address: '123 Main St, City',
+                phone: '123-456-7890',
+            },
+        ]
         // Save the user to the database
-        await user.save();
-        console.log('User added successfully!');
+        await User.insertMany(users);
+        console.log('Users added successfully!');
     } catch (err) {
         console.error('Error inserting user:', err);
     }
 };
 
-main();
+const run = async () => {
+    await main()
+    db.close()
+}
+
+run()
