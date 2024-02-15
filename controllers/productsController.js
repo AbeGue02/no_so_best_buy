@@ -23,7 +23,17 @@ const getProducts = async (req, res) => {
             query.rate = { $gte: parseInt(req.query.ratingMin), $lte: 5 };
         }
 
-        const products = await Product.find(query);
+        // Filter by category
+        if (req.query.category) {
+            query.category = req.query.category;
+        }
+     
+        // Filter by brand
+        if (req.query.brand) {
+            query.brand = req.query.brand;
+        }
+
+        const products = await Product.find(query).populate();
         res.json(products);
     } catch (error) {
         return res.status(500).send("An error has occured")

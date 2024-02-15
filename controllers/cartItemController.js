@@ -1,4 +1,4 @@
-const { CartItem } = require('../models')
+const { CartItem, ShoppingCart } = require('../models')
 
 const getCartItems = async (req, res) => {
     try {
@@ -16,7 +16,18 @@ const getCartItemById = async (req,res) => {
             res.json(cartItem)
         }
     } catch (error) {
-        return res.status(500).send('Collection with the specified ID does not exists');
+        return res.status(500).send('Cart Item with the specified ID does not exists');
+    }
+}
+
+const getCartItemsInShoppingCart = async (req,res) => {
+    try {
+        const shoppingCart = await ShoppingCart.findOne({user: [req.params.id]})
+        const cartItems = await CartItem.find({shoppingCart_id: shoppingCart._id})
+        console.log(cartItems)
+        res.json(cartItems)
+    } catch (e) {
+        return res.status(500).send('Cart Items with the specified ID does not exists');
     }
 }
 
@@ -61,6 +72,7 @@ const deleteCartItem = async (req, res) => {
 module.exports = {
     getCartItems,
     getCartItemById,
+    getCartItemsInShoppingCart,
     createCartItem,
     updateCartItem,
     deleteCartItem

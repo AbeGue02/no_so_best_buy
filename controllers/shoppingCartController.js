@@ -20,6 +20,15 @@ const getShoppingCartById = async (req,res) => {
     }
 }
 
+const getUserShoppingCart = async (req,res) => {
+    try {
+        const shoppingCart = await ShoppingCart.findOne({user: [req.params.id]})
+        res.json(shoppingCart)
+    } catch (e) {
+        return res.status(500).send('Collection with the specified ID does not exists');
+    }
+}
+
 const createShoppingCart = async (req,res) => {
     try {
         const shoppingCart = await new ShoppingCart(req.body)
@@ -61,7 +70,8 @@ const deleteShoppingCart = async (req, res) => {
 module.exports = {
     getShoppingCarts,
     getShoppingCartById,
+    getUserShoppingCart,
     createShoppingCart,
     updateShoppingCart,
-    deleteShoppingCart
+    deleteShoppingCart,
 }

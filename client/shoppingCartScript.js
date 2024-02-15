@@ -4,8 +4,8 @@
 const testProduct = document.querySelector('#getme')
 const productsContainer = document.querySelector('#shopping-cart-contents')
 let user = ''
-let shoppingCart = ''
-const cartItems = []
+let shoppingCart = {}
+let cartItems = {}
 
 // CLASSES
 
@@ -96,7 +96,7 @@ const getUser = async () => {
 const getShoppingCart = async () => {
     try {
         const { _id } = user.data
-        shoppingCart = await axios.get(`http://localhost:3001/users/${_id}/shoppingCart`)
+        shoppingCart = await axios.get(`http://localhost:3001/users/${_id}/shopping-cart`)
         console.log(shoppingCart)
     } catch (e) {
         console.error('Error has occurred within getShoppingCart func: ', e)
@@ -107,7 +107,7 @@ const getShoppingCart = async () => {
 const getCartItems = async () => {
     try {
         const { _id } = user.data
-        const response = await axios.get(`http://localhost:3001/users/${_id}/shoppingCart/cartItems`)
+        const response = await axios.get(`http://localhost:3001/users/${_id}/shopping-cart/cartItems`)
         cartItems = response.data
         console.log(cartItems)
     } catch (e) {
