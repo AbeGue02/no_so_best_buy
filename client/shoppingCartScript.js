@@ -5,6 +5,7 @@ const testProduct = document.querySelector('#getme')
 const productsContainer = document.querySelector('#shopping-cart-contents')
 let user = ''
 let shoppingCart = ''
+const cartItems = []
 
 // CLASSES
 
@@ -69,10 +70,17 @@ class DOMCartItem {
 
 // FUNCTIONS
 
-const createCartItem = async () => {
-    const testProduct = new DOMCartItem(1, '65cce449e7d04ed6831f4492', 50)
-    await testProduct.populate()
-    productsContainer.insertAdjacentHTML('beforeend', testProduct.htmlText)
+const createCartItems = async () => {
+
+    cartItems.forEach(async (item) => {
+        const product = new DOMCartItem(item._id, item.product[0], 1)
+        await product.populate()
+        productsContainer.insertAdjacentHTML('beforeend',product.htmlText)
+    })
+
+    // const testProduct = new DOMCartItem(1, '65cce449e7d04ed6831f4492', 50)
+    // await testProduct.populate()
+    // productsContainer.insertAdjacentHTML('beforeend', testProduct.htmlText)
 }
 
 const getUser = async () => {
@@ -81,7 +89,7 @@ const getUser = async () => {
         user = await axios.get(`http://localhost:3001/users/${userId}`)
         console.log(user)
     } catch (e) {
-        console.error('Error occurred withing getUser function',e)
+        console.error('Error occurred within getUser function',e)
     }
 }
 
@@ -91,7 +99,19 @@ const getShoppingCart = async () => {
         shoppingCart = await axios.get(`http://localhost:3001/users/${_id}/shoppingCart`)
         console.log(shoppingCart)
     } catch (e) {
-        console.error('Error has occurred i=within getShoppingCart func: ', e)
+        console.error('Error has occurred within getShoppingCart func: ', e)
+    }
+}
+
+//Returns an array of all the cart items with the shopping cart id
+const getCartItems = async () => {
+    try {
+        const { _id } = user.data
+        const response = await axios.get(`http://localhost:3001/users/${_id}/shoppingCart/cartItems`)
+        cartItems = response.data
+        console.log(cartItems)
+    } catch (e) {
+        console.error('Error has occurred within getCartItems func: ', e)
     }
 }
 
@@ -101,4 +121,6 @@ testProduct.addEventListener('click', async () => {
     //await createCartItem()
     await getUser()
     await getShoppingCart()
+    await getCartItems()
+
 })
