@@ -1,3 +1,9 @@
+const cart = document.querySelector('#cart-container')
+cart.addEventListener('click', () => {
+    console.log()
+    window.location.href = 'shoppingCart.html'
+})
+
 //Product data
 const products = [
     { name: 'Pioneer 7', rating: 4.5, price: 799.99, brand: 'Pioneer' },
@@ -63,3 +69,4 @@ document.getElementById('brand').addEventListener('change', applyFilters);
 
 // Initial rendering
 renderProducts(products);
+
