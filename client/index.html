@@ -10,16 +10,17 @@
     <header>
         <h1>NOT SO BEST BUY</h1>
         <div id="search-bar-container"><input type="text" placeholder="Search"></div>  
-        <div id="cart-container"><h2>cart</h2><img src="./cart.png" alt="shopping cart" ></div>
+        <div id="cart-container"><img src="./cart.png" alt="shopping cart" ></div>
     </header>
     <main>
+
+        <!-- AMID CODE START -->
 
         <aside id="sidebar">
             <h2>Search Filters</h2>
 
-            
             <label for="ratingSelect">Minimum Rating:</label>
-            <select id="rating">
+            <select id="ratingSelect">
                 <option value="0">Any</option>
                 <option value="1">1.0</option>
                 <option value="2">2.0</option>
@@ -28,13 +29,14 @@
                 <option value="5">5.0</option>
             </select>
 
-            <label for="priceFilterContainer">Price Filter:</label>
+            <br />
+            
+            <label for="priceMin priceMax">Price Filter:</label>
             <div id="priceFilterContainer">
                 <input type="number" class="priceFilters" id="priceMin" min="0" placeholder="min.">
                 <span> - </span>
                 <input type="number" class="priceFilters" id="priceMax" min="0" placeholder="max.">
             </div>
-            
             <label for="brand">Brand:</label>
             <select id="brand">
                 <option value="all">All Brands</option>
@@ -43,9 +45,12 @@
                 <option value="jvc">JVC</option>
             </select>
 
-            <button onclick="applyFilters()">Apply Filters</button>
+            <button id="apply-filters" onclick="applyFilters()">Apply Filters</button>
         </aside>
-        <div id="search-results-container">
+
+        <!-- AMID CODE END -->
+
+        <section id="search-results-container">
             <div id="product-img"></div>
             <div id="name-model-rating-container">
                 <p id="price">$1200</p>
@@ -54,7 +59,7 @@
                 <p id="rating">Rating</p>
                 <input type="button" value="🛒 Add to Cart" id="cart-button">
             </div>
-        </div>
+        </section>
     </main>
   
     <footer>
