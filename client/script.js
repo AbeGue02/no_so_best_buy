@@ -63,3 +63,4 @@ document.getElementById('brand').addEventListener('change', applyFilters);
 
 // Initial rendering
 renderProducts(products);
+

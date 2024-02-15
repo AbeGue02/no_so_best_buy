@@ -1,57 +1,8 @@
 body {
-    color: #050506;
+    color: #1B45B7;
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-content: flex-start;
-    width: 100vw;
-    height: 80px;
-    position: fixed;
-    top: 0;
-    margin: 0;
-    padding: 0;
-    background-color: #0070c0;
-    overflow: hidden;
-    color: white;
-}
-
-main {
-    display: flex;
-    flex-direction: row;
-}
-
-footer {
-    background-color: #0070c0;
-    color: rgb(246, 241, 241);
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-h1 {
-    color: white;
-    margin: 10px;
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-h2 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 400;
-}
-
-input {
-    height: 25px;
-    width: 100%;
-    border: none;
-    border-radius: 3px;
 }
 
 header {
@@ -62,10 +13,60 @@ header {
     height: 80px;
     position: sticky;
     top: 0;
-    margin: 0;
+    margin: 0 0 10px 0;
     padding: 0;
-    background-color: #0070c0;
+    background-color: #1B45B7;
     overflow: hidden; 
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+footer {
+    background-color: #0070c0;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+h1 {
+    color: white;
+    margin: 10px 0 10px 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 80px;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: #1B45B7;
+    text-align: left;
+    padding-top: 0;
+    margin: 10px 0 0 0;
+}
+
+a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    padding-top: 0;
+    margin: 0 0 0 0;
+    text-decoration: none;
+}
+
+input {
+    height: 25px;
+    width: 100%;
+    border: none;
+    border-radius: 3px;
 }
 
 img {
@@ -112,20 +113,25 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: row;
 }
 
 #cart-container:hover {
     cursor: pointer;
     text-decoration: underline;
     text-decoration-color: white;
+    margin: 0;
 }
 
 #search-results-container {
     display: flex;
-    flex: 3;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    height: 120px;
+    width: 60%;
+    padding-left: 5px;
+    margin: 0
 }
 
 #name-model-rating-container {
@@ -135,13 +141,12 @@ img {
     text-align: left;
     height: 100%;
     width: 60%;
-    padding-right: 0;
+    padding-right: 5px;
     top: 0;
 }
 
 #price {
     margin: 0 0 0 0;
-    border: red solid 2px;
 }
 
 #name, #model, #rating {
@@ -149,7 +154,7 @@ img {
     justify-self: space-evenly;
 }
 
-#rating-filter {
+#ratingSelect {
     margin: 5px 0 5px 0;
     border-bottom: #ccc solid 2px ;
     padding-bottom: 5px;
@@ -157,6 +162,7 @@ img {
 
 label {
     margin: 10px 0 0 0;
+    color: #1B45B7;
 }
 
 #max-price {
@@ -172,8 +178,9 @@ label {
 #cart-button {
     height: 1.5rem;
     background-color: #ffe000;
-    border-radius: 10px;
+    border-radius: 5px;
     font-weight: bolder;
+    margin-top: 15px;
     transition: background-color 0.3s;
 }
 
@@ -185,21 +192,26 @@ label {
     background-color: grey;
     height: 100%;
     width: 50%;
+    margin: 0 5px 0 0;
 }
 
 
 #sidebar {
-    width: 20%;
-    padding: 20px;
+    width: 40%;
+    padding: 0 5px 0 5px;
     background-color: white;
     border-right: 2px solid #ccc;
-    margin-top: 10px;
+    margin: 0 0 0 0;
     display: flex;
     flex-direction: column;
 }
 
 #apply-filters {
-    
+    border-radius: 5px;
+    color: white;
+    background-color: #1B45B7;
+    border: none;
+    height: 25px;
 }
 
 
@@ -208,18 +220,26 @@ label {
 
     h1 {
         font-size: 1.5rem;
-        margin: 10px 0 0 20px;
+        height: 100px;
+        width: 100px;
+        margin: 10px 0 0 10px;
+        
+    }
+
+    a {
+        font-size: 1.5rem;
+        text-decoration: none;
     }
 
     header {
-        height: 100px;
-
+        height: 125px;
+        margin: 0 0 10px 0;
     }
 
     #search-results-container {
         width: 70%;
         height: 200px;
-        margin: 10px;
+        margin: 0 10px 0 0;
         border-radius: 10px;
     }
 
@@ -241,6 +261,16 @@ label {
         height: 100%;
         width: 35%;
         margin-right: 5px;
+    }
+
+    #cart-button {
+        height: 1.5rem;
+        background-color: #ffe000;
+        border-radius: 5px;
+        font-weight: bolder;
+        margin: 10px 2px 0 0;
+        padding: 0;
+        transition: background-color 0.3s;
     }
 }
 
