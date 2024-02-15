@@ -39,7 +39,7 @@ class DOMCartItem {
                         <div class="shopping-cart-item-info-container">
                             <h3 class="item-name">${this.name}</h3>
                             <h5>Brand: <span class="item-brand">${this.brand}</span></h5>
-                            <h5>Category: <span class="item-category">${this.brand}</span></h5>
+                            <h5>Category: <span class="item-category">${this.category}</span></h5>
                             <h5>Quantity:</h5>
                             <input class="item-quantity" type="number" placeholder="Item Quantity" value="${this.quantity}">
                         </div>
