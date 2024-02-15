@@ -82,6 +82,7 @@ img {
 #sidebar {
     flex: 1;
     margin: 10px;
+    color: #000000;
 }
 
 #priceFilterContainer {
