@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+        <title>Shopping Cart</title>
+        <script defer src="./shoppingCartScript.js"></script>
+        <link rel="stylesheet" href="shoppingCartStyle.css">
+    </head>
+    <body>
+        <header>
+            <h1 id="logo">NOT SO BEST BUY</h1>
+            <div id="search-bar-container"><input type="text" placeholder="Search"></div>  
+        </header>
+
+        <main>
+            <section id="shopping-cart-container">
+                <h2>Your shopping cart:</h2>
+                <div id="shopping-cart-contents">
+                    <!-- <div class="shopping-cart-item-container">
+                        <div class="shopping-cart-item-image-container">
+                            <img src="#">
+                        </div>
+                        <div class="shopping-cart-item-info-container">
+                            <h3 class="item-name">Name</h3>
+                            <h5>Brand: <span class="item-brand"></span></h5>
+                            <h5>Category: <span class="item-category"></span></h5>
+                            <h5>Quantity:</h5>
+                            <input class="item-quantity" type="number" placeholder="Item Quantity">
+                        </div>
+                        <div class="shopping-cart-item-quantity-container">
+                            <h3>$<span class="item-total"></span></h3>
+                            <h5>$<span class="item-price"></span>/each</h5>
+                            <button class="delete-item-button">Delete Item</button>
+                        </div>
+                    </div> -->
+
+                </div>
+            </section>
+            <aside id="checkout-container">
+                <h2>Checkout</h2>
+                <p class="shoppingCartEntry">Total: $<span id="checkout-total"></span></p>
+                <button id="placeOrderButton">Place Order</button>
+            </aside>
+        </main>
+        <button id="getme">Get Items!</button>
+    </body>
+</html>
