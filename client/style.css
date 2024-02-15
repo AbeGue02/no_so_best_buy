@@ -13,7 +13,6 @@ header {
     height: 80px;
     position: sticky;
     top: 0;
-    margin: 0 0 10px 0;
     padding: 0;
     background-color: #1B45B7;
     overflow: hidden; 
@@ -22,6 +21,7 @@ header {
 main {
     display: flex;
     flex-direction: row;
+    flex: 1;
 }
 
 footer {
@@ -36,10 +36,9 @@ footer {
 
 h1 {
     color: white;
-    margin: 8px 0 10px 10px;
+    margin: 10px;
     font-size: 1.2rem;
     text-align: center;
-    width: 80px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -137,10 +136,9 @@ img {
 #search-results-container {
     display: flex;
     flex-direction: row;
+    flex: 3;
     justify-content: center;
     align-items: center;
-    height: 120px;
-    width: 60%;
     padding-left: 5px;
     margin: 0
 }
@@ -187,7 +185,7 @@ label {
     margin: 5px 0 10px 0
 }
 
-#cart-button {
+.cart-button {
     height: 1.5rem;
     background-color: #ffe000;
     border-radius: 5px;
@@ -196,17 +194,31 @@ label {
     transition: background-color 0.3s;
 }
 
-#cart-button:hover {
+.cart-button:hover {
     background-color: #fff563;
 }
 
-#product-img {
-    background-color: grey;
-    height: 100%;
-    width: 50%;
-    margin: 0 5px 0 0;
+.product-container {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
 }
 
+.product-img-container {
+    aspect-ratio: 1 / 1;
+    height: 15rem;
+    background-color: grey;
+}
+
+.product-info-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 10px;
+}
 
 #sidebar {
     width: 40%;
@@ -228,92 +240,5 @@ label {
 
 #categories {
     margin: 0px 0 5px 0;
-}
-
-
-
-
-
-@media (min-width: 639px) {
-
-    h1 {
-        font-size: 1.5rem;
-        height: 100px;
-        width: 100px;
-        margin: 20px 0 0 10px;
-        
-    }
-
-    h3 {
-        font-size: 1.8rem;
-        text-decoration: none;
-    }
-
-    header {
-        height: 125px;
-        margin: 0 0 10px 0;
-    }
-
-    #search-results-container {
-        width: 70%;
-        height: 200px;
-        margin: 0 10px 0 0;
-        border-radius: 10px;
-    }
-
-    #name-model-rating-container {
-        width: 95%;
-    }
-
-    #price {
-        font-size: 1.5rem;
-    }
-
-    #name, #model, #rating {
-        font-size: 1rem;
-        margin: 18px 0 20px 0;
-    }
-
-    #product-img {
-        background-color: grey;
-        height: 100%;
-        width: 35%;
-        margin-right: 5px;
-    }
-
-    #cart-button {
-        height: 1.5rem;
-        background-color: #ffe000;
-        border-radius: 5px;
-        font-weight: bolder;
-        margin: 10px 2px 0 0;
-        padding: 0;
-        transition: background-color 0.3s;
-    }
-
-    #cart-container {
-        margin-right: 10px;
-        width: 140px;
-    }
-
-    #cart-container:hover {
-        cursor: pointer;
-        text-decoration: underline;
-        text-decoration-color: white;
-        margin-right: 10px;
-    }
-
-    img {
-        height: 80px;
-        width: auto;
-    }
-
-    label {
-        font-size: 1rem;
-    }
-
-    h2 {
-        font-size: 2rem;
-    }
 }
 

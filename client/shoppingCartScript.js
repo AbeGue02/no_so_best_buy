@@ -107,7 +107,7 @@ const getShoppingCart = async () => {
 const getCartItems = async () => {
     try {
         const { _id } = user.data
-        const response = await axios.get(`http://localhost:3001/users/${_id}/shopping-cart/cartItems`)
+        const response = await axios.get(`http://localhost:3001/users/${_id}/shopping-cart/items`)
         cartItems = response.data
         console.log(cartItems)
     } catch (e) {
@@ -122,5 +122,4 @@ testProduct.addEventListener('click', async () => {
     await getUser()
     await getShoppingCart()
     await getCartItems()
-
 })
